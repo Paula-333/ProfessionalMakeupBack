@@ -31,8 +31,4 @@ Route::group([
     });
 });
 
-Route::group([
-    'middleware' => ['auth:api', 'scope:admin']
-], function () {
-    Route::post('prueba', 'App\Http\Controllers\PruebaController@store');
-});
+Route::apiResource('appointment', 'App\Http\Controllers\AppointmentController');

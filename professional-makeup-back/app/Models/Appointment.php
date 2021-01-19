@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Appointment extends Model
 {
     use HasFactory;
+    public $table = "appointment";
     public $timestamps = false;
 
     protected $fillable = [
         'date',
         'hour',
-        'makeup',
+        
     ];
 
     public function user()
