@@ -19,20 +19,20 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::group([
+    'middleware' => 'cors',
     'prefix' => 'auth'
 ], function () {
     Route::post('login', 'App\Http\Controllers\AuthController@login');
     Route::post('signup', 'App\Http\Controllers\AuthController@signUp');
+    Route::apiResource('appointment', 'App\Http\Controllers\AppointmentController');
 
     Route::group([
-        'middleware' => 'auth:api'
+        'middleware' => ['auth:api', 'cors'] 
     ], function () {
         Route::get('logout', 'App\Http\Controllers\AuthController@logout');
+        
     });
 });
 
+Route::apiResource('appointment', 'App\Http\Controllers\AppointmentController');
 
-
-Route::group(['middleware' => ['cors']], function () {
-    Route::apiResource('appointment', 'App\Http\Controllers\AppointmentController');
-});
