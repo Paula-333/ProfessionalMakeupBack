@@ -31,4 +31,8 @@ Route::group([
     });
 });
 
-Route::apiResource('appointment', 'App\Http\Controllers\AppointmentController');
+
+
+Route::group(['middleware' => ['cors']], function () {
+    Route::apiResource('appointment', 'App\Http\Controllers\AppointmentController');
+});
