@@ -1,17 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers ;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Plate;
-use App\Models\User;
+use App\Models\Appointment;
+//use phpDocumentor\Reflection\Types\Integer as TypesInteger;
+//use Illuminate\Support\Facades\Integer;
+//use Illuminate\Http\Request;
+//use App\Models\User;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function getProfile($id)
+  
     {
-        
+        $profile = Appointment::join('users','users.id', '=', 'appointment.user_id')
+            ->join('makeup','appointment.makeup_id', '=', 'makeup.id')
+            ->where('users.id', '=', $id)
+            ->select('users.name', 'appointment.date', 'appointment.hour', 'makeup.makeup_name')
+            ->get();
+        return $profile;
+
     }
 
 }
