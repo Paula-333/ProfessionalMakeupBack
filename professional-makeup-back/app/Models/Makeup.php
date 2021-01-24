@@ -14,5 +14,4 @@ class Makeup extends Model
     {
         return $this->belongsToMany('App\Appointment');
     }
-
 }

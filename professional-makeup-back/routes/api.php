@@ -27,12 +27,12 @@ Route::group([
     Route::apiResource('appointment', 'App\Http\Controllers\AppointmentController');
 
     Route::group([
-        'middleware' => ['auth:api', 'cors'] 
+        'middleware' => ['auth:api'] 
     ], function () {
         Route::get('logout', 'App\Http\Controllers\AuthController@logout');
         
     });
 });
 
-Route::apiResource('appointment', 'App\Http\Controllers\AppointmentController');
+//Route::apiResource('appointment', 'App\Http\Controllers\AppointmentController');
 

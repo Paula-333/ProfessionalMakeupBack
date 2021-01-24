@@ -14,7 +14,8 @@ class Appointment extends Model
     protected $fillable = [
         'date',
         'hour',
-        
+        'makeup_id',
+        'user_id',
     ];
 
     public function user()
@@ -26,5 +27,4 @@ class Appointment extends Model
     {
         return $this->belongsToMany('App\Makeup');
     }
-
 }

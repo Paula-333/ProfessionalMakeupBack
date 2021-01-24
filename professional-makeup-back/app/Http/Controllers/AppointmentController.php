@@ -19,6 +19,9 @@ class AppointmentController extends Controller
         $validator = Validator::make($request->all(), [
             'date' => 'required',
             'hour' => 'required',
+            'makeup_id'=> 'required',
+            'user_id'=> 'required',
+
         ]);
 
         if ($validator->fails()) {
@@ -31,24 +34,15 @@ class AppointmentController extends Controller
         Appointment::create($request->all());
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
+  
     public function show($id)
     {
         return Appointment::find($id);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+     
     public function update(Request $request, $id)
     {
         $plate = Appointment::findOrFail($id);
@@ -58,12 +52,7 @@ class AppointmentController extends Controller
         return $plate;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     
     public function destroy($id)
     {
         $plate = Appointment::findOrFail($id);
@@ -71,4 +60,4 @@ class AppointmentController extends Controller
 
         return $plate;
     }
-}
+} 

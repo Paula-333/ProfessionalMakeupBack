@@ -14,14 +14,9 @@ class CreateMakeup extends Migration
     public function up()
     {
         Schema::create('makeup', function (Blueprint $table) {
-            
             $table->id();
             $table->timestamps();
-            $table->string('wedding');
-            $table->string('event');
-            $table->string('prom');
-            $table->string('photoshoot');
-
+            $table->string('makeup_name');
         });
     }
 
