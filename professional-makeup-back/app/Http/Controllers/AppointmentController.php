@@ -34,30 +34,8 @@ class AppointmentController extends Controller
         Appointment::create($request->all());
     }
 
-    
-  
-    public function show($id)
-    {
-        return Appointment::find($id);
-    }
+ 
 
 
      
-    public function update(Request $request, $id)
-    {
-        $plate = Appointment::findOrFail($id);
-        $plate->fill($request->all());
-        $plate->save();
-
-        return $plate;
-    }
-
-     
-    public function destroy($id)
-    {
-        $plate = Appointment::findOrFail($id);
-        $plate->delete();
-
-        return $plate;
-    }
 } 

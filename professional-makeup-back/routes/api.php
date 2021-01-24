@@ -25,6 +25,7 @@ Route::group([
     Route::post('login', 'App\Http\Controllers\AuthController@login');
     Route::post('signup', 'App\Http\Controllers\AuthController@signUp');
     Route::apiResource('appointment', 'App\Http\Controllers\AppointmentController');
+    Route::get('user/{email}', 'App\Http\Controllers\AuthController@getUserByEmail');
 
     Route::group([
         'middleware' => ['auth:api'] 
