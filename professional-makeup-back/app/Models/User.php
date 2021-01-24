@@ -46,8 +46,5 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Appointment');
     }
-    public function profile()
-    {
-        return $this->hasOne('App\Profile')->withPivot('user_name');
-    }
+    
 }

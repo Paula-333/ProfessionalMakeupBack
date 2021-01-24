@@ -27,4 +27,10 @@ class Appointment extends Model
     {
         return $this->belongsToMany('App\Makeup');
     }
+
+    public function profile()
+    {
+        return $this->belongsTo('App\Profile');
+    }
+
 }
