@@ -16,6 +16,7 @@ Planteamiento inicial de la base de datos antes de empezar el proyecto con Larav
 ![Getting Started](images/planteamiento.png)
 Después de migrar las tablas con Laravel a phpmyadmin:
 ![Getting Started](images/phpmyadminBBDD.png)
+![Getting Started](images/phpmyadmin.png)
 
 #### · Rutas con Postman:
 - http://127.0.0.1:8000/api/auth/signup -> Crear cuenta
