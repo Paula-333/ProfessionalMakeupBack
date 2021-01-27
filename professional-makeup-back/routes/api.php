@@ -27,11 +27,13 @@ Route::group([
     Route::apiResource('appointment', 'App\Http\Controllers\AppointmentController');
     Route::get('user/{email}', 'App\Http\Controllers\AuthController@getUserByEmail');
     Route::get('profile/{id}', 'App\Http\Controllers\ProfileController@getProfile');
+    Route::get('deleteAppointment/{id}', 'App\Http\Controllers\AppointmentController@deleteAppointment');
 
     Route::group([
         'middleware' => ['auth:api'] 
     ], function () {
         Route::get('logout', 'App\Http\Controllers\AuthController@logout');
+        
         
     });
 });

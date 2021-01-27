@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class AppointmentController extends Controller
 {
@@ -34,6 +35,13 @@ class AppointmentController extends Controller
         Appointment::create($request->all());
     }
 
+    public function deleteAppointment($id) {
+       
+        $deleteAppointment = DB::table('appointment')->where('id','=', $id)->delete();
+       
+        return $deleteAppointment ;
+       
+    }
  
 
 
