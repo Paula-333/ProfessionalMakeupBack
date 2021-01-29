@@ -3,10 +3,7 @@
 namespace App\Http\Controllers ;
 
 use App\Models\Appointment;
-//use phpDocumentor\Reflection\Types\Integer as TypesInteger;
-//use Illuminate\Support\Facades\Integer;
-//use Illuminate\Http\Request;
-//use App\Models\User;
+
 
 class ProfileController extends Controller
 {

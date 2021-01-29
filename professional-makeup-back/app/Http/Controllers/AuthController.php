@@ -80,8 +80,8 @@ class AuthController extends Controller
     public function getUserByEmail(String $email)
     {
         
-        $prueba = DB::table('users')->where('email', '=', $email)->get();
-        return $prueba;
+        $getEmail = DB::table('users')->where('email', '=', $email)->get();
+        return $getEmail;
     }
 
 }
